@@ -1,4 +1,4 @@
-import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { takeLatest, call, put, all, delay } from 'redux-saga/effects';
 import { Alert } from 'react-native';
 import api from '~/services/api';
 // import history from '~/services/history';
@@ -38,11 +38,12 @@ export function* singUp({ payload }) {
   try {
     const { name, email, password } = payload;
 
+    console.log('AQUI');
+
     yield call(api.post, 'users', {
       name,
       email,
       password,
-      provider: true,
     });
 
     // history.push('/');
@@ -68,7 +69,7 @@ export function setToken({ payload }) {
 
 export function singOut() {
   console.tron.error('OI');
-  history.push('/');
+  // history.push('/');
 }
 
 export default all([
