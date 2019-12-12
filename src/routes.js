@@ -11,6 +11,7 @@ import SingUp from '~/pages/SingUp';
  * LOGADO
  */
 import Dashboard from '~/pages/Dashboard';
+import Profile from '~/pages/Profile';
 
 export default (signedIn = false) =>
   createAppContainer(
@@ -20,9 +21,22 @@ export default (signedIn = false) =>
           SingIn,
           SingUp,
         }),
-        App: createBottomTabNavigator({
-          Dashboard,
-        }),
+        App: createBottomTabNavigator(
+          {
+            Dashboard,
+            Profile,
+          },
+          {
+            tabBarOptions: {
+              keyboardHidesTabBar: true,
+              activeTintColor: '#fff',
+              inactiveTintColor: 'rgba(255,255,255, 0.6)',
+              style: {
+                backgroundColor: '#8d41a8',
+              },
+            },
+          }
+        ),
       },
       { initialRouteName: signedIn ? 'App' : 'Sign' }
     )
