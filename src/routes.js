@@ -12,6 +12,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SingIn from '~/pages/SingIn';
 import SingUp from '~/pages/SingUp';
 
+/**
+ * AGENDAMENTO
+ */
 import SelectProvider from '~/pages/New/SelectProvider';
 import SelectDateTime from '~/pages/New/SelectDateTime';
 import Confirm from '~/pages/New/Confirm';
